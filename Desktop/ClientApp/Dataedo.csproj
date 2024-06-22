@@ -1,0 +1,397 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Dataedo</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+    <StartupObject>Dataedo.App.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Dataedo.App.UserControls.PanelControls.TableUserControlHelpers.Dictionaries.en_US.aff" />
+    <None Remove="Dataedo.App.UserControls.PanelControls.TableUserControlHelpers.Dictionaries.en_US.dic" />
+    <None Remove="Dataedo.App.UserControls.PanelControls.TableUserControlHelpers.Dictionaries.EnglishAlphabet.txt" />
+    <None Remove="Dataedo.App.Onboarding.Home.Data.HomePage.xml" />
+    <None Remove="Dataedo.App.Onboarding.Home.Data.HomePageDark.xml" />
+    <None Remove="Dataedo.App.SQLs.SearchSqlQuery.sql" />
+    <None Remove="Dataedo32.exe.licenses" />
+    <None Remove="Dataedo\App\Onboarding\Home\Data\HomePage.xml" />
+    <None Remove="Dataedo\App\Onboarding\Home\Data\HomePageDark.xml" />
+    <None Remove="Dataedo\App\SQLs\SearchSqlQuery.sql" />
+    <None Remove="Dataedo\App\UserControls\PanelControls\TableUserControlHelpers\Dictionaries.EnglishAlphabet.txt" />
+    <None Remove="Dataedo\App\UserControls\PanelControls\TableUserControlHelpers\Dictionaries.en_US.aff" />
+    <None Remove="Dataedo\App\UserControls\PanelControls\TableUserControlHelpers\Dictionaries.en_US.dic" />
+    <EmbeddedResource Include="Dataedo32.exe.licenses" />
+    <EmbeddedResource Include="Dataedo\App\Onboarding\Home\Data\HomePage.xml" />
+    <EmbeddedResource Include="Dataedo\App\Onboarding\Home\Data\HomePageDark.xml" />
+    <EmbeddedResource Include="Dataedo\App\SQLs\SearchSqlQuery.sql" />
+    <EmbeddedResource Include="Dataedo\App\UserControls\PanelControls\TableUserControlHelpers\Dictionaries.EnglishAlphabet.txt" />
+    <EmbeddedResource Include="Dataedo\App\UserControls\PanelControls\TableUserControlHelpers\Dictionaries.en_US.aff" />
+    <EmbeddedResource Include="Dataedo\App\UserControls\PanelControls\TableUserControlHelpers\Dictionaries.en_US.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dataedo.LicenseFile\Dataedo.LicenseFile.csproj" />
+    <ProjectReference Include="..\LicenseHelperLibrary\LicenseHelperLibrary.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.Charts.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.DataProcessing">
+      <HintPath>..\Dependencies\Dataedo.DataProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraEditors.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.CustomControls">
+      <HintPath>..\Dependencies\Dataedo.CustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Data">
+      <HintPath>..\Dependencies\Dataedo.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client.Abstractions">
+      <HintPath>..\Dependencies\GraphQL.Client.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Shared">
+      <HintPath>..\Dependencies\Dataedo.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Model">
+      <HintPath>..\Dependencies\Dataedo.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Dataedo.Data.Base">
+      <HintPath>..\Dependencies\Dataedo.Data.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraLayout.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.2">
+      <HintPath>..\Dependencies\DevExpress.Data.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraTreeList.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="DevExpress.Docs.v19.2">
+      <HintPath>..\Dependencies\DevExpress.Docs.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2">
+      <HintPath>..\Dependencies\DevExpress.Utils.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraBars.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.RichEdit.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="Microsoft.Data.SqlClient">
+      <HintPath>..\Dependencies\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraWizard.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraRichEdit.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraSpellChecker.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="RecentProjectsLibrary">
+      <HintPath>..\Dependencies\RecentProjectsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMessageBox">
+      <HintPath>..\Dependencies\CustomMessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorCode">
+      <HintPath>..\Dependencies\ColorCode.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.SpellChecker.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraDiagram.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.Diagram.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.SqlParser">
+      <HintPath>..\Dependencies\Dataedo.SqlParser.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\Dependencies\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\Dependencies\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="ConfigurationFileHelperLibrary">
+      <HintPath>..\Dependencies\ConfigurationFileHelperLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraReports.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.Spreadsheet.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraSpreadsheet.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Snowflake.Data">
+      <HintPath>..\Dependencies\Snowflake.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Universal">
+      <HintPath>..\Dependencies\Devart.Data.Universal.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector">
+      <HintPath>..\Dependencies\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\Dependencies\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Vertica.Data">
+      <HintPath>..\Dependencies\Vertica.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Teradata.Client.Provider">
+      <HintPath>..\Dependencies\Teradata.Client.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\Dependencies\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassandra">
+      <HintPath>..\Dependencies\Cassandra.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest">
+      <HintPath>..\Dependencies\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Neo4j.Driver.Simple">
+      <HintPath>..\Dependencies\Neo4j.Driver.Simple.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.BigQuery.V2">
+      <HintPath>..\Dependencies\Google.Cloud.BigQuery.V2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices">
+      <HintPath>..\Dependencies\Microsoft.AnalysisServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Cosmos.Client">
+      <HintPath>..\Dependencies\Microsoft.Azure.Cosmos.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Salesforce.Force">
+      <HintPath>..\Dependencies\Salesforce.Force.dll</HintPath>
+    </Reference>
+    <Reference Include="Sybase.AdoNet4.AseClient">
+      <HintPath>..\Dependencies\Sybase.AdoNet4.AseClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\Dependencies\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\Dependencies\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Sap.Data.Hana.v4.5">
+      <HintPath>..\Dependencies\Sap.Data.Hana.v4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="NetSuite.SuiteAnalyticsConnect">
+      <HintPath>..\Dependencies\NetSuite.SuiteAnalyticsConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.DBTConnector">
+      <HintPath>..\Dependencies\Dataedo.DBTConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Universal.Oracle">
+      <HintPath>..\Dependencies\Devart.Data.Universal.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>..\Dependencies\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.Office.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Avro">
+      <HintPath>..\Dependencies\Avro.dll</HintPath>
+    </Reference>
+    <Reference Include="Parquet">
+      <HintPath>..\Dependencies\Parquet.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>..\Dependencies\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\Dependencies\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\Dependencies\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\Dependencies\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Blobs">
+      <HintPath>..\Dependencies\Azure.Storage.Blobs.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\Dependencies\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Files.DataLake">
+      <HintPath>..\Dependencies\Azure.Storage.Files.DataLake.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Common">
+      <HintPath>..\Dependencies\Azure.Storage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core">
+      <HintPath>..\Dependencies\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDialogs.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraDialogs.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions">
+      <HintPath>..\Dependencies\DevExpress.XtraReports.v19.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraPrinting.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\Dependencies\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Salesforce.Common">
+      <HintPath>..\Dependencies\Salesforce.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.Printing.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.Tabular">
+      <HintPath>..\Dependencies\Microsoft.AnalysisServices.Tabular.dll</HintPath>
+    </Reference>
+    <Reference Include="Neo4j.Driver">
+      <HintPath>..\Dependencies\Neo4j.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Athena">
+      <HintPath>..\Dependencies\AWSSDK.Athena.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.SalesforceConnector">
+      <HintPath>..\Dependencies\Dataedo.SalesforceConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Primitives">
+      <HintPath>..\Dependencies\GraphQL.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client">
+      <HintPath>..\Dependencies\GraphQL.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SSISConnector">
+      <HintPath>..\Dependencies\SSISConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.DataSources.Base">
+      <HintPath>..\Dependencies\Dataedo.DataSources.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2">
+      <HintPath>..\Dependencies\AWSSDK.DynamoDBv2.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.DataSources">
+      <HintPath>..\Dependencies\Dataedo.DataSources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI">
+      <HintPath>..\Dependencies\DevExpress.XtraCharts.v19.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2">
+      <HintPath>..\Dependencies\DevExpress.XtraCharts.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\Dependencies\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data">
+      <HintPath>..\Dependencies\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.CloudResourceManager.v1">
+      <HintPath>..\Dependencies\Google.Apis.CloudResourceManager.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>..\Dependencies\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomizedSkins">
+      <HintPath>..\Dependencies\CustomizedSkins.dll</HintPath>
+    </Reference>
+    <Reference Include="ToggleSwitch">
+      <HintPath>..\Dependencies\ToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Log">
+      <HintPath>..\Dependencies\Dataedo.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core">
+      <HintPath>..\Dependencies\DevExpress.PivotGrid.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\Dependencies\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.AnalysisServices.Core">
+      <HintPath>..\Dependencies\Microsoft.AnalysisServices.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode">
+      <HintPath>..\Dependencies\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Data.Sql.SqlServerCe">
+      <HintPath>..\Dependencies\Dataedo.Data.Sql.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\Dependencies\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSnappy">
+      <HintPath>..\Dependencies\IronSnappy.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Data.Sql.Base">
+      <HintPath>..\Dependencies\Dataedo.Data.Sql.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\Dependencies\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Bigquery.v2">
+      <HintPath>..\Dependencies\Google.Apis.Bigquery.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client.Serializer.Newtonsoft">
+      <HintPath>..\Dependencies\GraphQL.Client.Serializer.Newtonsoft.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client.Abstractions.Websocket">
+      <HintPath>..\Dependencies\GraphQL.Client.Abstractions.Websocket.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>..\Dependencies\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity">
+      <HintPath>..\Dependencies\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax">
+      <HintPath>..\Dependencies\Google.Api.Gax.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\Dependencies\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\Dependencies\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\Dependencies\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

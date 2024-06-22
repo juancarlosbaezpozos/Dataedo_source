@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>LicenseHelperLibrary</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net48</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="LicenseHelperLibrary.dll.licenses" />
+    <EmbeddedResource Include="LicenseHelperLibrary.dll.licenses" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\Dependencies\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMessageBox">
+      <HintPath>..\Dependencies\CustomMessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.CustomControls">
+      <HintPath>..\Dependencies\Dataedo.CustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Data">
+      <HintPath>..\Dependencies\Dataedo.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Data.Base">
+      <HintPath>..\Dependencies\Dataedo.Data.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Model">
+      <HintPath>..\Dependencies\Dataedo.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2">
+      <HintPath>..\Dependencies\DevExpress.Utils.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient">
+      <HintPath>..\Dependencies\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+</Project>

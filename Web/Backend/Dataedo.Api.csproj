@@ -1,0 +1,100 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <AssemblyName>Dataedo.Api</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Dataedo.Api.Program</StartupObject>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
+    <PackageReference Include="System.Private.ServiceModel" Version="4.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Dataedo.Licenses">
+      <HintPath>..\Dependencies\Dataedo.Licenses.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Repository">
+      <HintPath>..\Dependencies\Dataedo.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Repository.EntityFrameworkModel">
+      <HintPath>..\Dependencies\Dataedo.Repository.EntityFrameworkModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Repository.Services">
+      <HintPath>..\Dependencies\Dataedo.Repository.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Repository.Services.SqlServer">
+      <HintPath>..\Dependencies\Dataedo.Repository.Services.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataedo.Shared">
+      <HintPath>..\Dependencies\Dataedo.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="ITfoxtec.Identity.Saml2">
+      <HintPath>..\Dependencies\ITfoxtec.Identity.Saml2.dll</HintPath>
+    </Reference>
+    <Reference Include="ITfoxtec.Identity.Saml2.MvcCore">
+      <HintPath>..\Dependencies\ITfoxtec.Identity.Saml2.MvcCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+      <HintPath>..\Dependencies\Microsoft.AspNetCore.Authentication.JwtBearer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>..\Dependencies\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel">
+      <HintPath>..\Dependencies\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>..\Dependencies\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OpenApi">
+      <HintPath>..\Dependencies\Microsoft.OpenApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>..\Dependencies\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Extensions.Logging">
+      <HintPath>..\Dependencies\Serilog.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Settings.Configuration">
+      <HintPath>..\Dependencies\Serilog.Settings.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>..\Dependencies\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.AspNetCore.Swagger">
+      <HintPath>..\Dependencies\Swashbuckle.AspNetCore.Swagger.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.AspNetCore.SwaggerGen">
+      <HintPath>..\Dependencies\Swashbuckle.AspNetCore.SwaggerGen.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.AspNetCore.SwaggerUI">
+      <HintPath>..\Dependencies\Swashbuckle.AspNetCore.SwaggerUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement">
+      <HintPath>..\Dependencies\System.DirectoryServices.AccountManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\Dependencies\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+</Project>

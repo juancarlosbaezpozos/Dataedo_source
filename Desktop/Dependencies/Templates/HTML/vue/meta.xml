@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <Name>Single Page Application</Name>
+  <Description>Default template. Works well both when hosted and ran locally.</Description>
+  <Transformer>vue</Transformer>
+  <Customizer>vue</Customizer>
+  <Version>v1.17.2</Version>
+</Template>

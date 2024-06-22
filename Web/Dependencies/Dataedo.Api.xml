@@ -1,0 +1,1875 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dataedo.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Dataedo.Api.AppSettings.DefaultConnection">
+            <summary>
+            The class providing default settings for connecting to database repository.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.DefaultConnection.ConnectionString">
+            <summary>
+            Gets or sets the default connection string used for connecting to database repository.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.AppSettings.JwtAuthentication">
+            <summary>
+            The class providing configuration for session management.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.JwtAuthentication.TokensKey">
+            <summary>
+            Gets or sets the key value for generating key for securing session.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.JwtAuthentication.ValidIssuer">
+            <summary>
+            Gets or sets the valid issuer.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.JwtAuthentication.ValidAudience">
+            <summary>
+            Gets or sets the valid audience.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.JwtAuthentication.TokenExpiresIn">
+            <summary>
+            Gets or sets the number of seconds that access token is valid.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.JwtAuthentication.RefreshTokenExpiresIn">
+            <summary>
+            Gets or sets the number of seconds that refresh token is valid.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.AppSettings.JwtAuthentication.ClockSkew">
+            <summary>
+            Gets or sets the number of seconds of clock skew.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.AuthorizationSupport.AllowAnonymousHandler">
+            <summary>
+            The class providing allowing any action to be executed anonymously.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.AuthorizationSupport.AllowAnonymousHandler.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)">
+            <summary>
+            Allows any authorization.
+            </summary>
+            <param name="context">The authorization information.</param>
+            <returns>The task.</returns>
+        </member>
+        <member name="T:Dataedo.Api.Authorization.JWT.Tokens">
+            <summary>
+            The class providing configuration for tokens support.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Authorization.JWT.Tokens.SecurityAlgorithm">
+            <summary>
+            The algorithm used for signing credentials.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.JWT.Tokens.GetJwtAuthentication(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Gets the object providing configuration for JWT authentication management.
+            </summary>
+            <param name="configuration">The object providing application's configuration properties</param>
+            <returns>The object providing configuration for JWT authentication management.</returns>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.JWT.Tokens.GetTokensKey(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Gets the key for signing credentials.
+            </summary>
+            <param name="configuration">The object providing application's configuration properties.</param>
+            <returns>The key for signing credentials as byte array.</returns>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.JWT.Tokens.GetTokenValidationParameters(Microsoft.Extensions.Configuration.IConfiguration,System.Boolean)">
+            <summary>
+            Gets the token validation parameters for validating tokens.
+            </summary>
+            <param name="configuration">The object providing application's configuration properties.</param>
+            <param name="validateLifetime">The value inticating whether token expiration should be checked.</param>
+            <returns>The token validation parameters for validating tokens.</returns>
+        </member>
+        <member name="T:Dataedo.Api.Authorization.Users.UserData">
+            <summary>
+            The class providing base data about user for storing in session.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UserData.#ctor(System.String,System.String,Dataedo.Repository.RepositoryType,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Authorization.Users.UserData"/> class with values.
+            </summary>
+            <param name="identifier">The unique identifier of user.</param>
+            <param name="username">The username of user.</param>
+            <param name="repositoryType">The type of repository.</param>
+            <param name="connectionString">The connection string used for connecting to server repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.Identifier">
+            <summary>
+            Gets or sets the unique identifier of user.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.Username">
+            <summary>
+            Gets or sets the username of user.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.RepositoryType">
+            <summary>
+            Gets or sets the type of repository.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.ConnectionString">
+            <summary>
+            Gets or sets the connection string used for connecting to server repository.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.RefreshToken">
+            <summary>
+            Gets or sets the token used for refreshing authentication token.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.RefreshTokenExpirationDate">
+            <summary>
+            Gets or sets the expiration date the token used for refreshing authentication token.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Authorization.Users.UserData.IsRefreshTokenExpired">
+            <summary>
+            Gets or sets the value indicating whether the token used for refreshing authentication token is expired.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UserData.SetRefreshToken(System.String,System.DateTime)">
+            <summary>
+            Sets the refresh token data.
+            </summary>
+            <param name="refreshToken">The token used for refreshing authentication token.</param>
+            <param name="refreshTokenExpirationDate">The expiration date of token used for refreshing authentication token.</param>
+        </member>
+        <member name="T:Dataedo.Api.Authorization.Users.UsersStorage">
+            <summary>
+            The class providing logged users data.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Authorization.Users.UsersStorage.Users">
+            <summary>
+            The dictionary providing base data about user identified by user identifier (key).
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UsersStorage.AddUser(System.String,Dataedo.Api.Authorization.Users.UserData)">
+            <summary>
+            Adds user to session storage.
+            </summary>
+            <param name="identifier">The unique identifier of user.</param>
+            <param name="userData">The base data about user</param>
+            <returns><c>true</c> if user data is added successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UsersStorage.GetUser(System.String)">
+            <summary>
+            Gets user from session storage by user identifier.
+            </summary>
+            <param name="identifier">The unique identifier of user.</param>
+            <returns>The user data if it is stored; otherwise <c>null</c>.</returns>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UsersStorage.RemoveUser(System.String)">
+            <summary>
+            Removes user from storage.
+            </summary>
+            <param name="identifier">The unique identifier of user.</param>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UsersStorage.CheckIfUserExists(System.String)">
+            <summary>
+            Checks whether user exsists in storage.
+            </summary>
+            <param name="identifier">The unique identifier of user.</param>
+        </member>
+        <member name="M:Dataedo.Api.Authorization.Users.UsersStorage.RemoveRecordsWithExpiredTokens">
+            <summary>
+            Removes from storage users that theirs refresh token is expired.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Configuration.CustomExceptionHandlingMiddlewareExtensions">
+            <summary>
+            The class providing exception handling in controllers.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Configuration.CustomExceptionHandlingMiddlewareExtensions.UseCustomExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Adds exception handler to application's request pipeline.
+            </summary>
+            <param name="app">The application's request pipeline object.</param>
+        </member>
+        <member name="T:Dataedo.Api.Configuration.Swashbuckle.FormatDocumentXmlComments">
+            <summary>
+            The class providing modifying <see cref="!:SwaggerDocument"/> comments for proper HTML result.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Configuration.Swashbuckle.FormatDocumentXmlComments.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Applies custom formatting for Swagger document properties.
+            </summary>
+            <param name="swaggerDoc">The Swagger document.</param>
+            <param name="context">The context of filter.</param>
+        </member>
+        <member name="M:Dataedo.Api.Configuration.Swashbuckle.FormatDocumentXmlComments.FormatValue(System.String)">
+            <summary>
+            Formats comment values for proper HTML result.
+            </summary>
+            <param name="value">The comment value.</param>
+            <returns>Formatted comment value.</returns>
+        </member>
+        <member name="T:Dataedo.Api.Configuration.Swashbuckle.ParameterOperationFilter">
+            <summary>
+            The class providing operation filter for adding parameter description and removing parameter for parameters unsupported in Swagger.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Configuration.Swashbuckle.ParameterOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies adding parameter description and removing parameter for parameters unsupported in Swagger.
+            </summary>
+            <param name="operation">The operation</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.Base.BaseObjectController">
+            <summary>
+            The base class providing actions for objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.#ctor(Dataedo.Repository.Services.Interfaces.Base.IBaseObjectService,Dataedo.Repository.Services.Interfaces.Base.IWritableDatabaseObjectService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.Base.BaseObjectController"/> class providing base actions.
+            </summary>
+            <param name="service">The service object providing actions for data of objects.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.Base.BaseObjectController.Service">
+            <summary>
+            Gets the object providing actions for data of objects.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.Base.BaseObjectController.WriteService">
+            <summary>
+            Gets the object providing actions for updating objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetSubjectAreas(System.Int32,Dataedo.Repository.Services.JoinDefinitions.SubjectAreasJoinsEnum.SubjectAreasJoins[])">
+            <summary>
+            Gets the subject areas that object belongs to.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The subject areas that object belongs to.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetHtmlDescription(System.Int32)">
+            <summary>
+            Gets the HTML formatted description of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The HTML formatted description of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetPlainTextDescription(System.Int32)">
+            <summary>
+            Gets the plain text description of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The plain text description of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetUsesDependencies(Dataedo.Repository.Services.Features.Dependencies.DependencyInformation,System.Int32,Dataedo.Repository.Services.JoinDefinitions.DependencyJoinsEnum.DependencyJoins[])">
+            <summary>
+            Gets the list of top level of uses dependencies by specified server, database, schema, name and type.
+            </summary>
+            <param name="dependencyInformation">The information about referenced object.</param>
+            <param name="rootDatabaseId">The ID of root database object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>A list of top level dependencies for the specified ID.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetUsedByDependencies(Dataedo.Repository.Services.Features.Dependencies.DependencyInformation,System.Int32,Dataedo.Repository.Services.JoinDefinitions.DependencyJoinsEnum.DependencyJoins[])">
+            <summary>
+            Gets the list of top level of uses dependencies by specified server, database, schema, name and type.
+            </summary>
+            <param name="dependencyInformation">The information about referencing object.</param>
+            <param name="rootDatabaseId">The ID of root database object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>A list of top level dependencies for the specified ID.</returns>
+            <response code="200">Successful operation.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetMetadata(System.Int32)">
+            <summary>
+            Gets the metadata (creation, import and update information) information.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The metadata (creation, import and update information) information.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.BaseObjectController.GetFeedbacks(System.Int32,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.Base.CustomFieldsController">
+            <summary>
+            The base class providing actions for objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.CustomFieldsController.#ctor(Dataedo.Repository.Services.Features.CustomFields.Interfaces.IObjectCustomFields,Dataedo.Repository.Services.Features.CustomFields.Interfaces.ICustomFieldsWriteMarkerService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.Base.CustomFieldsController"/> class providing base actions.
+            </summary>
+            <param name="service">The service object providing actions for data of objects.</param>
+            <param name="writeService">The service object providing actions for updating data of objects.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.Base.CustomFieldsController.Service">
+            <summary>
+            Gets or sets the object providing actions for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.CustomFieldsController.GetCustomFields(System.Int32,Dataedo.Repository.Services.JoinDefinitions.CustomFieldsJoinsEnum.CustomFieldsJoins[])">
+            <summary>
+            Gets the values of custom fields of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The custom fields of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.CustomFieldsController.GetCustomFieldsDefinitionsForClass(Dataedo.Repository.Services.JoinDefinitions.CustomFieldDefinitionJoinsEnum.CustomFieldDefinitionJoins[],System.Nullable{System.Int32})">
+            <summary>
+            Gets the definitions of custom fields applicable for this type of object (that are configured to be used for this type of object).
+            </summary>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The definitions of custom fields of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.Base.CustomFieldsController.WriteService">
+            <summary>
+            Gets the object providing actions for updating objects.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.Base.TablesViewsController">
+            <summary>
+            The class providing actions for table and view objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsController.#ctor(Dataedo.Repository.Services.Features.DatabaseObjects.Tables.Interfaces.ITablesViewsService,Dataedo.Repository.Services.Interfaces.Base.IWritableDatabaseObjectService,Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.Base.TablesViewsController"/> class providing base actions for tables and views.
+            </summary>
+            <param name="service">The service object providing actions for data of objects.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.Base.TablesViewsController.Service">
+            <summary>
+            Gets the object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsController.GetTriggers(System.Int32,Dataedo.Repository.Services.JoinDefinitions.TriggersJoinsEnum.TriggersJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Triggers.TriggerFiltersEnum.TriggerFilters})">
+            <summary>
+            Gets the basic information about triggers of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping, limiting, filtering result items.</param>
+            <returns>The list of basic information about triggers of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.#ctor(Dataedo.Repository.Services.Features.DatabaseObjects.Tables.Interfaces.ITablesViewsStructuresService,Dataedo.Repository.Services.Interfaces.Base.IWritableDatabaseObjectService,Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.Base.TablesViewsController"/> class providing base actions for tables and views.
+            </summary>
+            <param name="service">The service object providing actions for data of objects.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.Service">
+            <summary>
+            Gets the object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.GetColumns(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ColumnsJoinsEnum.ColumnsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Columns.ColumnFiltersEnum.ColumnFilters})">
+            <summary>
+            Gets the basic information about columns of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters"></param>
+            <returns>The list of basic information about columns of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.GetKeys(System.Int32,Dataedo.Repository.Services.JoinDefinitions.KeysJoinsEnum.KeysJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.Keys.Enums.UniqueConstraintFiltersEnum.UniqueConstraintFilters})">
+            <summary>
+            Gets the basic information about keys of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters"></param>
+            <returns>The list of basic information about keys of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.GetRelationshipsReferenced(System.Int32,Dataedo.Repository.Services.JoinDefinitions.RelationshipsJoinsEnum.RelationshipsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.Relationships.RelationshipFiltersEnum.RelationshipFilters})">
+            <summary>
+            Gets the basic information about relationships of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters"></param>
+            <returns>The list of basic information about keys of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.GetRelationshipsReferencing(System.Int32,Dataedo.Repository.Services.JoinDefinitions.RelationshipsJoinsEnum.RelationshipsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.Relationships.RelationshipFiltersEnum.RelationshipFilters})">
+            <summary>
+            Gets the basic information about relationships of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters"></param>
+            <returns>The list of basic information about keys of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Base.TablesViewsStructuresController.GetGlossaryEntries(System.Int32,Dataedo.Repository.Services.JoinDefinitions.GlossaryEntriesJoinsEnum.GlossaryEntryJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.GlossaryEntries.GlossaryEntryFiltersEnum.GlossaryEntryFilters})">
+            <summary>
+            Gets the basic information about glossary entries related to object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping, limiting, filtering result items.</param>
+            <returns>The list of basic information about glossary entries related to object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.ColumnsController">
+            <summary>
+            The class providing actions for table objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.ColumnsController"/> class for actions for column objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.ColumnsController.Service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ColumnsJoinsEnum.ColumnsJoins[])">
+            <summary>
+            Gets the basic information about column.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.GetColumns(System.Collections.Generic.IEnumerable{System.Int32},Dataedo.Repository.Services.JoinDefinitions.ColumnsJoinsEnum.ColumnsJoins[])">
+            <summary>
+            Gets the collection of columns that their parent is current column.
+            </summary>
+            <param name="id">The ID of column.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The collection of columns that their parent is current column.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.GetMetadata(System.Int32)">
+            <summary>
+            Gets the metadata (creation, import and update information) information.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The metadata (creation, import and update information) information.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.GetGlossaryEntries(System.Int32,Dataedo.Repository.Services.JoinDefinitions.GlossaryEntriesJoinsEnum.GlossaryEntryJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.GlossaryEntries.GlossaryEntryFiltersEnum.GlossaryEntryFilters})">
+            <summary>
+            Gets the basic information about glossary entries related to column.
+            </summary>
+            <param name="id">The ID of column.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping, limiting, filtering result items.</param>
+            <returns>The list of basic information about glossary entries related to column.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.GetRelationshipsReferenced(System.Int32,Dataedo.Repository.Services.JoinDefinitions.RelationshipsJoinsEnum.RelationshipsJoins[])">
+            <summary>
+            Gets the object containing collection of relationships that consists of column with provided ID as referenced column.
+            </summary>
+            <param name="id">The ID of column.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The object containing collection of relationships that consists of column with provided ID as referenced column.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.GetRelationshipsReferencing(System.Int32,Dataedo.Repository.Services.JoinDefinitions.RelationshipsJoinsEnum.RelationshipsJoins[])">
+            <summary>
+            Gets the object containing collection of relationships that consists of column with provided ID as referencing column.
+            </summary>
+            <param name="id">The ID of column.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The object containing collection of relationships that consists of column with provided ID as referencing column.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.GetKeys(System.Int32,Dataedo.Repository.Services.JoinDefinitions.KeysJoinsEnum.KeysJoins[])">
+            <summary>
+            Gets the object containing collection of keys that consists of column with provided ID.
+            </summary>
+            <param name="id">The ID of column.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The object containing collection of keys that consists of column with provided ID.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ColumnsController.Get(System.Int32,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.DatabasesController">
+            <summary>
+            The class providing actions for database objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.DatabasesController"/> class for actions for databases objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.DatabasesController.Service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.Get(Dataedo.Repository.Services.JoinDefinitions.DatabasesJoinsEnum.DatabasesJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.Databases.DatabaseFiltersEnum.DatabaseFilters})">
+            <summary>
+            Gets the list of basic information about databases.
+            </summary>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.DatabasesJoinsEnum.DatabasesJoins[])">
+            <summary>
+            Gets the basic information about database.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+            
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.GetTables(System.Int32,Dataedo.Repository.Services.JoinDefinitions.TablesJoinsEnum.TablesJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Tables.TableFiltersEnum.TableFilters})">
+            <summary>
+            Gets the list of basic information about tables in database.
+            </summary>
+            <param name="id">The ID of database.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about tables in database.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.GetViews(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ViewsJoinsEnum.ViewsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Tables.TableFiltersEnum.TableFilters})">
+            <summary>
+            Gets the list of basic information about views in database.
+            </summary>
+            <param name="id">The ID of database.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about views in database.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.GetProcedures(System.Int32,Dataedo.Repository.Services.JoinDefinitions.Base.ProceduresFunctionsJoinsEnum.ProceduresFunctionsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Procedures.ProcedureFiltersEnum.ProcedureFilters})">
+            <summary>
+            Gets the list of basic information about procedures in database.
+            </summary>
+            <param name="id">The ID of database.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about procedures in database.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.GetFunctions(System.Int32,Dataedo.Repository.Services.JoinDefinitions.Base.ProceduresFunctionsJoinsEnum.ProceduresFunctionsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Procedures.ProcedureFiltersEnum.ProcedureFilters})">
+            <summary>
+            Gets the list of basic information about functions in database.
+            
+            </summary>
+            <param name="id">The ID of database.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about functions in database.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.Get(System.Int32,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.CreateUserPermission(System.Int32,Dataedo.Repository.Services.Features.Permissions.DTO.PermissionCreateDTO)">
+            <summary>
+            Allow add new permission for specific database
+            </summary>
+            <param name="id">Database id</param>
+            <param name="permission">Permission object to add</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.DatabasesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            Allow remove permission for specific database
+            </summary>
+            <param name="id">Database id</param>
+            <param name="permissionId">Permission id to remove</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.FacetedSearchController">
+            <summary>
+            The class providing actions for searching objects.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.FacetedSearchController.service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.FacetedSearchController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.QuickSearchController"/> class for actions for searching objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.FeedbackController.Get(Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackOrderByColumnEnum,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.FunctionsController">
+            <summary>
+            The class providing actions for function objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.FunctionsController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.FunctionsController"/> class for actions for function objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.FunctionsController.Service">
+            <summary>
+            Gets or sets the object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.FunctionsController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.FunctionsJoinsEnum.FunctionsJoins[])">
+            <summary>
+            Gets the basic information about function.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.FunctionsController.GetParameters(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ParametersJoinsEnum.ParametersJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitParameters)">
+            <summary>
+            Gets the list of basic information about parameters of function.
+            </summary>
+            <param name="id">The ID of function.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about parameters of function.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.FunctionsController.GetScript(System.Int32)">
+            <summary>
+            Gets the script of function.
+            </summary>
+            <param name="id">The ID of function.</param>
+            <returns>The script of function.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.GlossariesController">
+            <summary>
+            The class providing actions for glossary objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.GlossariesController"/> class for actions for glossary objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.GlossariesController.Service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.Get(Dataedo.Repository.Services.JoinDefinitions.GlossariesJoinsEnum.GlossariesJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.Glossaries.GlossaryFiltersEnum.GlossaryFilters})">
+            <summary>
+            Gets the list of basic information about glossaries.
+            </summary>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.GlossariesJoinsEnum.GlossariesJoins[])">
+            <summary>
+            Gets the basic information about glossaries.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.GetEntries(System.Int32,Dataedo.Repository.Services.JoinDefinitions.GlossaryEntriesJoinsEnum.GlossaryEntryJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.GlossaryEntries.GlossaryEntryFiltersEnum.GlossaryEntryFilters})">
+            <summary>
+            Gets the list of basic information about entries of glossary.
+            </summary>
+            <param name="id">The ID of glossary.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping, limiting, filtering result items.</param>
+            <returns>The list of basic information about entries of glossary.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.Get(System.Int32,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.CreateUserPermission(System.Int32,Dataedo.Repository.Services.Features.Permissions.DTO.PermissionCreateDTO)">
+            <summary>
+            Allow add new permission for specific glossary
+            </summary>
+            <param name="id">Glossary id</param>
+            <param name="permission">Permission object to add</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossariesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            Allow remove permission for specific glossary
+            </summary>
+            <param name="id">Glossary id</param>
+            <param name="permissionId">Permission id to remove</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.GlossaryEntriesController">
+            <summary>
+            The class providing actions for glossary objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossaryEntriesController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.GlossaryEntriesController"/> class for actions for glossary entries objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.GlossaryEntriesController.Service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossaryEntriesController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.GlossaryEntriesJoinsEnum.GlossaryEntryJoins[])">
+            <summary>
+            Gets the basic information about glossary entry.
+            </summary>
+            <param name="id">The ID of glossary entry.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossaryEntriesController.Get(System.Int32,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.GlossaryEntryRelationshipTypesController">
+            <summary>
+            The class providing actions for glossary entry relationship types.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossaryEntryRelationshipTypesController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.GlossaryEntryRelationshipTypesController"/> class for actions for glossary entry relationship types objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.GlossaryEntryRelationshipTypesController.Service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.GlossaryEntryRelationshipTypesController.Get(System.Nullable{System.Boolean})">
+            <summary>
+            Gets the basic information about glossary entry relationship types.
+            </summary>
+            <returns>The basic information about types.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="401">Unauthorized.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.HomeController">
+            <summary>
+            The class providing controller for start pages.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.HomeController.Index">
+            <summary>
+            Calls controller base action. Redirects to Swagger documentation.
+            </summary>
+            <returns>A Swagger documentation page.</returns>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.Interfaces.IDependencies">
+            <summary>
+            Represents object providing actions for dependencies.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Interfaces.IDependencies.GetUsesDependencies(Dataedo.Repository.Services.Features.Dependencies.DependencyInformation,System.Int32,Dataedo.Repository.Services.JoinDefinitions.DependencyJoinsEnum.DependencyJoins[])">
+            <summary>
+            Gets the list of top level of uses dependencies by specified server, database, schema, name and type.
+            </summary>
+            <param name="dependencyInformation">The information about referenced object.</param>
+            <param name="rootDatabaseId">The ID of root database object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>A list of top level dependencies for the specified ID.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.Interfaces.IDependencies.GetUsedByDependencies(Dataedo.Repository.Services.Features.Dependencies.DependencyInformation,System.Int32,Dataedo.Repository.Services.JoinDefinitions.DependencyJoinsEnum.DependencyJoins[])">
+            <summary>
+            Gets the list of top level of uses dependencies by specified server, database, schema, name and type.
+            </summary>
+            <param name="dependencyInformation">The information about referencing object.</param>
+            <param name="rootDatabaseId">The ID of root database object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>A list of top level dependencies for the specified ID.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.LicensesController">
+            <summary>
+            The class providing actions for table objects.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.LicensesController.httpContextAccessor">
+            <summary>
+            The object providing access to HTTP context for getting currently logged user.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.LicensesController.service">
+            <summary>
+            Gets object providing access to repository for licenses.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.LicensesController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.LicensesController"/> class for actions for licenses.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+            <param name="httpContextAccessor">The object providing access to HTTP context for getting currently logged user.</param>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.LicensesController.UpdateLicenseKey(System.String)">
+            <summary>
+            Updates the key of license of logged in user.
+            </summary>
+            <param name="key">The license key to set in license record.</param>
+            <response code="200">Successful operation.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="404">License record not found.</response>
+            <response code="422">
+            Key is invalid.
+            
+            <para>Reason is returned in validation-result header.</para>
+            
+            <para>Available values:</para>
+            
+            <list type="bullet">
+            <item><para>"None" - reason not set;</para></item>
+            <item><para>"Valid"- key is valid (should be never returned);</para></item>
+            <item><para>"NoKey" - key is empty (not provided);</para></item>
+            <item><para>"IncorrectLicenseKey" - key is not parsable;</para></item>
+            <item><para>"Lite" - unsupported Lite edition;</para></item>
+            <item><para>"VersionNotSupported" - license for earlier version;</para></item>
+            <item><para>"TrialEnded" - expired trial license;</para></item>
+            <item><para>"SubscriptionExpired" - expired subscription;</para></item>
+            <item><para>"InsufficientLicenseLevel" - license is not valid for Web;</para></item>
+            <item><para>"OtherError" - processing error occurred;</para></item>
+            </list>
+            </response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.MenusController">
+            <summary>
+            The class providing data for application menus.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.MenusController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.MenusController"/> class.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.MenusController.service">
+            <summary>
+            The object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.MenusController.GetDataDictionaryMenu(Dataedo.Repository.Services.Features.Menus.TreeParameters{Dataedo.Repository.Services.Features.Menus.Enums.DataDictionaryFiltersEnum.DataDictionaryFilters})">
+            <summary>
+            Gets the collection of tree nodes of data dictionary tree.
+            The collection is processed using provided parameters.
+            </summary>
+            <param name="treeParameters">
+            The parameters providing selecting required set of data by skipping and limiting result items, filtering.
+            The parameter also provides collection of identifiers of nodes that are expanded so their subnodes are also processed.
+            </param>
+            <returns>The collection of object representing nodes of tree.</returns>
+            <response code="200">Successful operation.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.MenusController.GetGlossariesMenu">
+            <summary>
+            Gets the collection of tree nodes of glossary tree.
+            The collection is processed using provided parameters.
+            </summary>
+            <returns>The collection of object representing nodes of tree.</returns>
+            <response code="200">Successful operation.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.MenusController.GetSubjectAreasMenu(Dataedo.Repository.Services.Features.Menus.TreeParameters{Dataedo.Repository.Services.Features.Menus.Enums.DataDictionaryFiltersEnum.DataDictionaryFilters})">
+            <summary>
+            Gets the collection of tree nodes of subject areas tree.
+            The collection is processed using provided parameters.
+            </summary>
+            <returns>The collection of object representing nodes of tree.</returns>
+            <response code="200">Successful operation.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.MenusController.GetDataClassificationMenu">
+            <summary>
+            Gets the collection of tree nodes of subject areas tree.
+            The collection is processed using provided parameters.
+            </summary>
+            <returns>The collection of object representing nodes of tree.</returns>
+            <response code="200">Successful operation.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.ProceduresController">
+            <summary>
+            The class providing actions for procedure objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ProceduresController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.ProceduresController"/> class for actions for procedures objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.ProceduresController.Service">
+            <summary>
+            Gets or sets the object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ProceduresController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ProceduresJoinsEnum.ProceduresJoins[])">
+            <summary>
+            Gets the basic information about procedure.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ProceduresController.GetParameters(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ParametersJoinsEnum.ParametersJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitParameters)">
+            <summary>
+            Gets the list of basic information about parameters of procedure.
+            </summary>
+            <param name="id">The ID of procedure.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about parameters of procedure.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ProceduresController.GetScript(System.Int32)">
+            <summary>
+            Gets the script of procedure.
+            </summary>
+            <param name="id">The ID of procedure.</param>
+            <returns>The script of procedure.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.QuickSearchController">
+            <summary>
+            The class providing actions for searching objects.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.QuickSearchController.service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.QuickSearchController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.QuickSearchController"/> class for actions for searching objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.RepositoryController.service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.RepositoryController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.QuickSearchController"/> class for actions for searching objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.SubjectAreasController">
+            <summary>
+            The class providing actions for subject area objects.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.SubjectAreasController.service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.SubjectAreasController"/> class for actions for subject areas objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.Get(System.Boolean,Dataedo.Repository.Services.JoinDefinitions.SubjectAreasJoinsEnum.SubjectAreasJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.SubjectAreas.SubjectAreaFiltersEnum.SubjectAreaFilters})">
+            <summary>
+            Gets the list of basic information about subject areas.
+            </summary>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.Get(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.SubjectAreasJoinsEnum.SubjectAreasJoins[])">
+            <summary>
+            Gets the basic information about subject area.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetErd(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.ErdsJoinsEnum.ErdsJoins[])">
+            <summary>
+            Gets the ERD of subject area.
+            </summary>
+            <param name="id">The ID of subject area.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The list of basic information about functions in subject area.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetSubjectAreas(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.SubjectAreasJoinsEnum.SubjectAreasJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.SubjectAreas.SubjectAreaFiltersEnum.SubjectAreaFilters})">
+            <summary>
+            Gets the list of basic information about subject areas that their parent is subject area with provided ID.
+            </summary>
+            <param name="id">The ID of subject area.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about subject areas that their parent is subject area with provided ID.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetTables(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.TablesJoinsEnum.TablesJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Tables.TableFiltersEnum.TableFilters})">
+            <summary>
+            Gets the list of basic information about tables in subject area.
+            </summary>
+            <param name="id">The ID of subject area.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about tables in subject area.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetViews(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.ViewsJoinsEnum.ViewsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Tables.TableFiltersEnum.TableFilters})">
+            <summary>
+            Gets the list of basic information about views in subject area.
+            </summary>
+            <param name="id">The ID of subject area.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about views in subject area.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetProcedures(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.Base.ProceduresFunctionsJoinsEnum.ProceduresFunctionsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Procedures.ProcedureFiltersEnum.ProcedureFilters})">
+            <summary>
+            Gets the list of basic information about procedures in subject area.
+            </summary>
+            <param name="id">The ID of subject area.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about procedures in subject area.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetFunctions(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.Base.ProceduresFunctionsJoinsEnum.ProceduresFunctionsJoins[],Dataedo.Repository.Services.Parameters.OffsetLimitFilterParameters{Dataedo.Repository.Services.Features.DatabaseObjects.Procedures.ProcedureFiltersEnum.ProcedureFilters})">
+            <summary>
+            Gets the list of basic information about functions in subject area.
+            </summary>
+            <param name="id">The ID of subject area.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <param name="parameters">The parameters providing selecting required set of data by skipping and limiting result items.</param>
+            <returns>The list of basic information about functions in subject area.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetCustomFields(System.Int32,System.Boolean,Dataedo.Repository.Services.JoinDefinitions.CustomFieldsJoinsEnum.CustomFieldsJoins[])">
+            <summary>
+            Gets the values of custom fields of object.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The custom fields of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.SubjectAreasController.GetCustomFieldsDefinitionsForClass(System.Boolean,Dataedo.Repository.Services.JoinDefinitions.CustomFieldDefinitionJoinsEnum.CustomFieldDefinitionJoins[])">
+            <summary>
+            Gets the definitions of custom fields applicable for this type of object (that are configured to be used for this type of object).
+            </summary>
+            <param name="isRoot">The value indicating whether subject area should be found in root level; otherwise, in another levels.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The definitions of custom fields of object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.TablesController">
+            <summary>
+            The class providing actions for table objects.# http
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TablesController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.TablesController"/> class for actions for tables objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.TablesController.Service">
+            <summary>
+            Gets or sets the object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TablesController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.TablesJoinsEnum.TablesJoins[])">
+            <summary>
+            Gets the basic information about table.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.TriggersController">
+            <summary>
+            The class providing actions for table objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.TriggersController"/> class for actions for trigger objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.TriggersController.Service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.TriggersJoinsEnum.TriggersJoins[])">
+            <summary>
+            Gets the basic information about trigger.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.GetScript(System.Int32)">
+            <summary>
+            Gets the script of procedure.
+            </summary>
+            <param name="id">The ID of procedure.</param>
+            <returns>The script of procedure.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.GetUsesDependencies(Dataedo.Repository.Services.Features.Dependencies.DependencyInformation,System.Int32,Dataedo.Repository.Services.JoinDefinitions.DependencyJoinsEnum.DependencyJoins[])">
+            <summary>
+            Gets the list of top level of uses dependencies by specified server, database, schema, name and type.
+            </summary>
+            <param name="dependencyInformation">The information about referenced object.</param>
+            <param name="rootDatabaseId">The ID of root database object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>A list of top level dependencies for the specified ID.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.GetUsedByDependencies(Dataedo.Repository.Services.Features.Dependencies.DependencyInformation,System.Int32,Dataedo.Repository.Services.JoinDefinitions.DependencyJoinsEnum.DependencyJoins[])">
+            <summary>
+            Gets the list of top level of uses dependencies by specified server, database, schema, name and type.
+            </summary>
+            <param name="dependencyInformation">The information about referencing object.</param>
+            <param name="rootDatabaseId">The ID of root database object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>A list of top level dependencies for the specified ID.</returns>
+            <response code="200">Successful operation.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.GetMetadata(System.Int32)">
+            <summary>
+            Gets the metadata (creation, import and update information) information.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The metadata (creation, import and update information) information.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.TriggersController.Get(System.Int32,Dataedo.Repository.Services.Features.Feedback.CollectionFeedbackParameters{Dataedo.Repository.Services.Features.Feedback.Enums.FeedbackFiltersEnum.FeedbackFilters})">
+            <summary>
+            Gets the basic information about feedback.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.UsersController">
+            <summary>
+            The class providing actions for managing API sessions.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.UsersController.usersSessionsService">
+            <summary>
+            The object providing service for managing API sessions.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Controllers.UsersController.service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.UsersController.#ctor(Dataedo.Api.Services.IUsersSessionsService,Dataedo.Api.RepositoryAccess.IRepositoryAccessManager,Microsoft.Extensions.Options.IOptions{Dataedo.Api.AppSettings.Saml2Client})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.UsersController"/> class with service.
+            </summary>
+            <param name="usersSessionsService">The object providing service for managing API sessions.</param>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.UsersController.LoginUser(Dataedo.Repository.Services.Features.Configuration.Enums.LoginMethodEnum.Enum,System.String,System.String,System.String)">
+            <summary>
+            Authenticates user, checks authorization and returns authentication token.
+            </summary>
+            <param name="windowsAuthentication">The value indicating whether user should be authenticated as Windows user.</param>
+            <param name="isLocalServer">The valie indicating whether server is local and integrated security should be used for connection.</param>
+            <param name="login">The name of user.</param>
+            <param name="password">The password of user.</param>
+            <returns>The authentication tokens.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="401">Unauthorized.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.UsersController.RefreshToken(System.String,System.String)">
+            <summary>
+            Checks refresh token and returns new tokens
+            </summary>
+            <param name="token">The authentication token.</param>
+            <param name="refreshToken">The token used for refreshing authentication token.</param>
+            <returns>The authentication tokens.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="401">Unauthorized.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.UsersController.Logout">
+            <summary>
+            Removes stored user session information of currently logged user.
+            </summary>
+            <returns>The empty result.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="401">Unauthorized.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.UsersController.GetIfIsAdmin(System.String)">
+            <summary>
+            Gets whether user with provided login is an administrator.
+            </summary>
+            <param name="userName">>The login.</param>
+            <returns>The value indicating whether user with provided login is an administrator.</returns>
+        </member>
+        <member name="T:Dataedo.Api.Controllers.ViewsController">
+            <summary>
+            The class providing actions for view objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ViewsController.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Controllers.ViewsController"/> class for actions for view objects.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+        </member>
+        <member name="P:Dataedo.Api.Controllers.ViewsController.Service">
+            <summary>
+            Gets or sets the object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ViewsController.Get(System.Int32,Dataedo.Repository.Services.JoinDefinitions.ViewsJoinsEnum.ViewsJoins[])">
+            <summary>
+            Gets the basic information about view.
+            </summary>
+            <param name="id">The ID of object.</param>
+            <param name="join">The array of names of data to load with objects.</param>
+            <returns>The basic information about object.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="M:Dataedo.Api.Controllers.ViewsController.GetScript(System.Int32)">
+            <summary>
+            Gets the script of procedure.
+            </summary>
+            <param name="id">The ID of procedure.</param>
+            <returns>The script of procedure.</returns>
+            <response code="200">Successful operation.</response>
+            <response code="400">Invalid ID supplied.</response>
+            <response code="404">Object not found.</response>
+        </member>
+        <member name="T:Dataedo.Api.Enums.Data.ConnectionTypeEnum">
+            <summary>
+            The class providing enumeration of connection types.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Enums.Data.ConnectionTypeEnum.ConnectionType">
+            <summary>
+            Specifies applicable statuses of connection types.
+            <para>
+            When using <see cref="T:Dataedo.Api.Enums.Data.ConnectionTypeEnum.ConnectionType"/> for JSON serialization use <code>[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]</code> attribute to make results contain <see cref="T:System.Runtime.Serialization.EnumMemberAttribute"/> EnumMember value instead of number value.
+            </para>
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.ConnectionTypeEnum.ConnectionType.Direct">
+            <summary>
+            A direct connection to database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.ConnectionTypeEnum.ConnectionType.OracleClient">
+            <summary>
+            A connection to database using Oracle client.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Enums.Data.DatabaseTypeEnum">
+            <summary>
+            The class providing enumeration of database types.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.RepositoryValueToEnumDictionary">
+            <summary>
+            The dictionary used for conversion from repository representation of database type to enumeration value.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType">
+            <summary>
+            Specifies applicable database types.
+            <para>
+            When using <see cref="T:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType"/> for JSON serialization use <code>[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]</code> attribute to make results contain <see cref="T:System.Runtime.Serialization.EnumMemberAttribute"/> EnumMember value instead of number value.
+            </para>
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.Aurora">
+            <summary>
+            An Aurora database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.AuroraPostgreSQL">
+            <summary>
+            An Aurora PostgreSQL database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.AzureSQLDatabase">
+            <summary>
+            A Azure SQL Database database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.AzureSQLDataWarehouse">
+            <summary>
+            A Azure SQL DataWarehouse database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.DB2">
+            <summary>
+            A DB2 database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.IBMDb2BigQuery">
+            <summary>
+            A IBM DB2 Big Query database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.Manual">
+            <summary>
+            A Manual (user-defined) database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.MariaDB">
+            <summary>
+            A MariaDB database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.MySQL">
+            <summary>
+            A MySQL database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.MySQL8">
+            <summary>
+            A MySQL 8 database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.ODBC">
+            <summary>
+            A database imported using ODBC.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.Oracle">
+            <summary>
+            A Oracle database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.PerconaMySQL">
+            <summary>
+            A Percona MySQL database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.PerconaMySQL8">
+            <summary>
+            A Percona MySQL 8 database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.PostgreSQL">
+            <summary>
+            A PostgreSQL database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.Redshift">
+            <summary>
+            A Redshift database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.Snowflake">
+            <summary>
+            A Snowflake database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.DatabaseTypeEnum.DatabaseType.SqlServer">
+            <summary>
+            A SQL Server database.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Enums.Data.DatabaseTypeEnum.ToEnumFromRepositoryValue(System.String)">
+            <summary>
+            Converts text representation from repository value to enumeration value.
+            </summary>
+            <param name="value">The text representation from repository value.</param>
+            <returns>The enumeration value.</returns>;
+            <exception cref="T:System.ArgumentException">Thrown when value does not match enumeration value.</exception>
+        </member>
+        <member name="T:Dataedo.Api.Enums.Data.StatusEnum">
+            <summary>
+            The class providing enumeration of statuses of synchronization.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Enums.Data.StatusEnum.Status">
+            <summary>
+            Specifies applicable statuses of synchronization.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.StatusEnum.Status.Active">
+            <summary>
+            A object exists in database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.Data.StatusEnum.Status.Deleted">
+            <summary>
+            A object is deleted from database.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.Active">
+            <summary>
+            Default repository status if everything is cofigured correctly.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.LostConnection">
+            <summary>
+            Connection is fully or partially configured, but due to the network issues
+            application cannot connect to database and continue validation.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.BackgroundProcessing">
+            <summary>
+            Cannot establish connection or check repository status
+            because other background process is performing (repository
+            upgrade or creator).
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.RepositoryNotConfigured">
+            <summary>
+            Connected to database, but repository wasn't prepared.
+            User has to choose existing repository or create a new one.
+            
+            This status is common on first run (after installation).
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.UpgradeRequired">
+            <summary>
+            Sucessfully connected to repository, but detected that
+            repository is in invalid version and should be upgraded.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.VersionNotSupported">
+            <summary>
+            Sucessfully connected to repository, but detected that
+            repository is in version which is not supported
+            (newer than application or too old).
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.Invalid">
+            <summary>
+            Successfully connected to repository, but detected error
+            that blocks from proper repository usage and requires
+            server administrator intervention (e.g. corrupted database).
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Enums.RepositoryStatusEnum.Status.AccountNotConfigured">
+            <summary>
+            Successfully connected to repository, but no users
+            found in the repository, first admin account must be created.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Program">
+            <summary>
+            The class providing application entry point.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Program.Main(System.String[])">
+            <summary>
+            The entry application method.
+            </summary>
+            <param name="args">The array of start parameters.</param>
+        </member>
+        <member name="M:Dataedo.Api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Creates <see cref="T:Microsoft.AspNetCore.Hosting.IWebHostBuilder"/> instance.
+            </summary>
+            <param name="args">The array of parameters.</param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Hosting.IWebHostBuilder"/> instance.</returns>
+        </member>
+        <member name="T:Dataedo.Api.RepositoryAccess.IRepositoryAccessManager">
+            <summary>
+            Represents object providing getting access to repository services.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.RepositoryAccess.IRepositoryAccessManager.GetRepository">
+            <summary>
+            Gets the object providing repository services.
+            </summary>
+            <returns>The object providing repository services.</returns>
+        </member>
+        <member name="T:Dataedo.Api.RepositoryAccess.RepositoryAccessManager">
+            <summary>
+            The class providing managing access to repository for currently logged user.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.RepositoryAccess.RepositoryAccessManager.httpContextAccessor">
+            <summary>
+            The object providing access to HTTP context for getting currently logged user.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.RepositoryAccess.RepositoryAccessManager.loggerFactory">
+            <summary>
+            The object providing configuring logging system.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.RepositoryAccess.RepositoryAccessManager.connectionStrings">
+            <summary>
+            The connection string to server repository used when there is not logged user.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.RepositoryAccess.RepositoryAccessManager.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.Extensions.Options.IOptionsSnapshot{Dataedo.Api.AppSettings.DefaultConnection},Dataedo.Repository.Services.Features.Notifications.Interfaces.INotificationService,Dataedo.Repository.Services.SqlServer.Services.ConfigurationService,Dataedo.Repository.Services.Services.ClassService,Dataedo.Repository.Services.Services.TypeService,Dataedo.Repository.Services.Services.DbmsService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.RepositoryAccess.RepositoryAccessManager"/> class.
+            </summary>
+            <param name="httpContextAccessor">The object providing access to HTTP context for getting currently logged user.</param>
+            <param name="loggerFactory">The object providing configuring logging system.</param>
+            <param name="defaultConnection">The configuration of default repository.</param>
+        </member>
+        <member name="M:Dataedo.Api.RepositoryAccess.RepositoryAccessManager.GetRepository">
+            <summary>
+            Gets the object providing repository services.
+            <para>If user is not confirmed as logged then default connection is used.</para>
+            </summary>
+            <returns>The object providing repository services.</returns>
+        </member>
+        <member name="T:Dataedo.Api.Services.IUsersSessionsService">
+            <summary>
+            Represents object providing service for managing API sessions.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Services.IUsersSessionsService.Login(Dataedo.Repository.Services.Parameters.RepositoryConnectionData)">
+            <summary>
+            Authenticates user: stores authenticated user data and creates session token.
+            <para>Returns authentication token.</para>
+            </summary>
+            <param name="connectionData">The object used for building connection string.</param>
+            <returns>The authentication token.</returns>
+        </member>
+        <member name="M:Dataedo.Api.Services.IUsersSessionsService.Login(System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Authenticates user: stores authenticated user data and creates session token.
+            <para>Returns authentication token.</para>
+            </summary>
+            <param name="windowsAuthentication">The value indicating whether user should be authenticated as Windows user.</param>
+            <param name="isLocalServer">The valie indicating whether server is local and integrated security should be used for connection.</param>
+            <param name="username">The name of user.</param>
+            <param name="password">The password of user.</param>
+            <returns>The authentication token.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Dataedo.Api.Services.IUsersSessionsService.RefreshToken(System.String,System.String)" -->
+        <member name="M:Dataedo.Api.Services.IUsersSessionsService.Logout">
+            <summary>
+            Removes stored user session information of currently logged user.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Services.UsersSessionsService">
+            <summary>
+            The class providing service for managing API sessions.
+            </summary>
+            <summary>
+            The class providing service for managing API sessions.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Services.UsersSessionsService.Login(Dataedo.Repository.Services.Parameters.RepositoryConnectionData)">
+            <summary>
+            Authenticates user: stores authenticated user data and creates session token.
+            <para>Returns authentication token.</para>
+            </summary>
+            <param name="connectionData">The object used for building connection string.</param>
+            <returns>The authentication token.</returns>
+        </member>
+        <member name="F:Dataedo.Api.Services.UsersSessionsService.service">
+            <summary>
+            Gets object providing access to repository for data of objects.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Services.UsersSessionsService.httpContextAccessor">
+            <summary>
+            The object providing access to HTTP context for getting currently logged user.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Services.UsersSessionsService.configuration">
+            <summary>
+            Gets the object providing application's configuration properties.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Services.UsersSessionsService.jwtAuthentication">
+            <summary>
+            The object providing configuration for JWT authentication management.
+            </summary>
+        </member>
+        <member name="F:Dataedo.Api.Services.UsersSessionsService.connectionStrings">
+            <summary>
+            The connection string to server repository used when there is not logged user.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Services.UsersSessionsService.#ctor(Dataedo.Api.RepositoryAccess.IRepositoryAccessManager,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Options.IOptions{Dataedo.Api.AppSettings.JwtAuthentication},Microsoft.Extensions.Options.IOptions{Dataedo.Api.AppSettings.DefaultConnection})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Services.UsersSessionsService"/> class with session configuration.
+            </summary>
+            <param name="repositoryAccessManager">The object providing getting object for accessing to repository.</param>
+            <param name="httpContextAccessor">The object providing access to HTTP context for getting currently logged user.</param>
+            <param name="configuration">The object providing application's configuration properties.</param>
+            <param name="jwtAuthentication">The object providing configuration for JWT authentication management.</param>
+            <param name="defaultConnection">The configuration of default repository.</param>
+        </member>
+        <member name="M:Dataedo.Api.Services.UsersSessionsService.Login(System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Authenticates user: stores authenticated user data and creates session token.
+            <para>Returns authentication token.</para>
+            </summary>
+            <param name="windowsAuthentication">The value indicating whether user should be authenticated as Windows user.</param>
+            <param name="isLocalServer">The valie indicating whether server is local and integrated security should be used for connection.</param>
+            <param name="username">The name of user.</param>
+            <param name="password">The password of user.</param>
+            <returns>The authentication tokens.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Dataedo.Api.Services.UsersSessionsService.RefreshToken(System.String,System.String)" -->
+        <member name="M:Dataedo.Api.Services.UsersSessionsService.Logout">
+            <summary>
+            Removes stored user session information of currently logged user.
+            </summary>
+        </member>
+        <member name="T:Dataedo.Api.Startup">
+            <summary>
+            The class providing configuring services and application's request pipeline.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dataedo.Api.Startup"/> class with configuration properties.
+            </summary>
+            <param name="configuration">The object providing application's configuration properties.</param>
+            <param name="environment">The object providing information about hosting environment an application is running in.</param>
+        </member>
+        <member name="P:Dataedo.Api.Startup.Configuration">
+            <summary>
+            Gets the object providing application's configuration properties.
+            </summary>
+        </member>
+        <member name="M:Dataedo.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures available services for application.
+            </summary>
+            <param name="services">The collection of service descriptors.</param>
+        </member>
+        <member name="M:Dataedo.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures application's request pipeline object and environment.
+            </summary>
+            <param name="app">The application's request pipeline object.</param>
+            <param name="env">The object providing information about hosting environment an application is running in.</param>
+        </member>
+        <member name="P:Dataedo.Repository.Services.DTO.Users.AuthenticationResultDTO.Token">
+            <summary>
+            The token used for authenticating user in API.
+            </summary>
+        </member>
+        <member name="P:Dataedo.Repository.Services.DTO.Users.AuthenticationResultDTO.RefreshToken">
+            <summary>
+            The token used for getting new token without providing credentials.
+            </summary>
+        </member>
+    </members>
+</doc>

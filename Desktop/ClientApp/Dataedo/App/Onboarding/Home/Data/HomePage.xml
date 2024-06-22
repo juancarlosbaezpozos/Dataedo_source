@@ -1,0 +1,67 @@
+﻿<?xml version="1.0"?>
+<WelcomePage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0">
+  <Title>Welcome!</Title>
+  <Sections>
+    <NoUserDatabasesSection IfAnyUserDatabases="false" IfNoUserDatabases="true">
+      <Title>Your Catalog</Title>
+      <Padding>
+        <Bottom>0</Bottom>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Top>15</Top>
+      </Padding>
+      <Text>You did not import any databases yet.</Text>
+    </NoUserDatabasesSection>
+    <DatabasesListSection IfAnyUserDatabases="true" IfNoUserDatabases="false">
+      <Title>Your Catalog</Title>
+      <Padding>
+        <Bottom>0</Bottom>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Top>15</Top>
+      </Padding>
+      <RowsCount>5</RowsCount>
+    </DatabasesListSection>
+    <LinksSection IfAnyUserDatabases="true" IfNoUserDatabases="true">
+      <Padding>
+        <Bottom>0</Bottom>
+        <Left>15</Left>
+        <Right>0</Right>
+        <Top>0</Top>
+      </Padding>
+      <Links>
+        <Link>
+          <Text>More resources</Text>
+          <Link>https://dataedo.com/resources</Link>
+          <ToolTip>
+            <Title>More resources</Title>
+            <Text>More resources</Text>
+          </ToolTip>
+        </Link>
+      </Links>
+    </LinksSection>
+    <LinksSection IfAnyUserDatabases="true" IfNoUserDatabases="true">
+      <Title>Help</Title>
+      <Padding>
+        <Bottom>0</Bottom>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Top>15</Top>
+      </Padding>
+      <Links>
+        <Link>
+          <Text>Browse support &amp; feedback forum</Text>
+          <Link>https://support.dataedo.com/</Link>
+        </Link>
+        <Link>
+          <Text>Create support ticket</Text>
+          <Link>https://dataedo.com/add-ticket?utm_source=dataedo_desktop</Link>
+        </Link>
+        <Link>
+          <Text>Read documentation</Text>
+          <Link>https://dataedo.com/docs?utm_source=dataedo_desktop</Link>
+        </Link>
+      </Links>
+    </LinksSection>
+  </Sections>
+</WelcomePage>

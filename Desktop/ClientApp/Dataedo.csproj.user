@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Dataedo\App\Classification\Forms\ClassificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\Forms\EditClassification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\Forms\EditMask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\Forms\RulesConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\UserControls\ClassificationChooserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\UserControls\ClassificationFieldsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\UserControls\ClassificationRulesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\UserControls\ClassificatorPresenterUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Classification\UserControls\DatabasesSelectorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\ConnectToDatabaseWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingForms\SaveRowOrValuesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingUserControls\CenterSectionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingUserControls\NavigationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingUserControls\RowStatsUserControlcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingUserControls\ValuesSectionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\DataProfilingUserControls\ValuesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\DataProfiling\SampleDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Documentation\DocWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddBulkColumnsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddBulkTablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddDataLinksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddLinkToBusinessGlossaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddObjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddTermForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\AddTermRelationshipsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\BusinessGlossaryExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\CheckedListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ClassificationExplorerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ClassificationSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ColumnsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ConnectAndSynchDataLakeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ConnectAndSynchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ConstraintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\CustomFieldForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\CustomFieldsSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\DBSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\DefaultWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\DesignProcedureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\DesignTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\DetachWebCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\DocGeneratingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ERDNodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\GridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ImportChooseObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ImportFromCloudStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ImportFromFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ImportPasteDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\LicenseDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\PDFTemplateEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ProgressWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\QueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\ReadOnlyTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\RelationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\RequestWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\Salesforce\SalesforceInteractiveSignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\SSLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\StartupSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\TextInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\UpgradeDataClassificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\UpgradeDataProfilingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Forms\UpgradeFormWebCatalogConnected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Helpers\Controls\DataLakeImageCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\History\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\ChooseImportFieldsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\ChooseImportTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\ChooseValuesToImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\DataToImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\UserControls\CheckingBeforeSavingSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\UserControls\CheckingBeforeSavingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\ImportDescriptions\UserControls\DataToImportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\LoginFormNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\AccessCodePageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Base\BasePageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Base\PageWithLoaderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Common\OptionButtonUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Common\SmallLogoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\ConnectToRepositoryPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\ConnectToServerRepositoryPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\CreateNewRepositoryPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\CreateNewServerRepositoryPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\CreateRepositoryProgressPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\FileLicensesPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\GettingStartedPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\LicensesPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\LoginPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\OperationCompletedNotSuccessfullyPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\OperationCompletedSuccessfullyPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\RecentPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Subcontrols\ConnectToSqlServerRepositoryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Subcontrols\CreateSqlServerRepositoryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Subcontrols\NoLicensesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Subcontrols\RecentListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\Subcontrols\UpgradeSqlServerRepositoryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\UpgradeRepositoryProgressPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\UpgradeServerRepositoryConnectedUsersPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\LoginFormTools\UserControls\UpgradeServerRepositoryPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Controls\OnboardingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Home\Controls\AddDatabaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Home\Controls\DatabasesListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Home\Controls\LinksToObjectsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Home\Controls\LinksUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Home\Controls\LinksWithImageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Onboarding\Home\HomePanelUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\OverridenControls\RichEditControlWithPasteAwareness.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Overriden_controls\CheckedComboBoxEditWithButtons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Tools\ERD\Canvas\CanvasControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Tools\ERD\Diagram\DiagramControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\Tools\PixelScrollingGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\AddBulkTablesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\AzureStorageBrowserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\BannerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\BaseCustomMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\Base\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\Base\BaseXtraUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\BulkCopyGridUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CaptionListBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ChooseCustomFieldsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ChooseDocumentationObjectTypeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ChooseFileProviderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ChooseModulesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ChooseObjectTypesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ClassificationExplorerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ClassificationSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CloudStorageBrowserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CloudStorageBrowserUserControls\AmazonS3BrowserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\Base\BaseWizardPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\ConnectionTypeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\DataSourceControls\FileSystemSourceUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\SelectingDataControls\Base\AvailableObjectsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\SelectingDataControls\Base\ObjectsToBeImportedUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\SelectingDataControls\Base\SelectingPanelUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\SelectingDataControls\Base\ServerHierachyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectAndSynchDataLakeForm\SelectingDataControls\HiererchyAndListsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\AmazonS3ConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\AstraConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\AthenaConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\AzureStorageConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\CassandraConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\ConnectorControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\CosmosDbConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\DataverseConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\Db2ConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\DbConnectUserControlNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\DBTConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\DdlScriptConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\DynamoDBConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\ElasticsearchConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\GoogleBigQueryConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\HiveMetastoreMySQLConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\HiveMetastorePostgreSQLConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\HiveMetastoreSQLServerConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\InterfaceTablesConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\MongoDbConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\MySQLConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\Neo4jConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\NetSuiteConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\ODBCConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\OracleConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\PostgreSQLConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\PowerBiDatasetConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\RedshiftConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SalesforceConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SapAseConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SapHanaConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SnowflakeConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SQLServerConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SSASConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\SSISConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\TableauConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\TeradataConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ConnectorsControls\VerticaConnectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomBandedGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomFieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomFieldsPanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomGridUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomMemoEditTreelist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomWithBordersXtraTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomXtraTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\CustomXtraTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageColumnsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDbTreeNodeContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramDatabaseContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramShape.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramTableColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageDiagramUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageFlowDiagramImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageFlowDiagramItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageFlowsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageProcessDiagramItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageProcessesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\DataLineageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DataLineage\SelectProcessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DBMSPickerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DDLDocumentationsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DDLExportSettingsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DDLGenerating\DDLChooseObjectsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\Dependencies\DependenciesTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\Dependencies\DependenciesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DesignTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DocumentationModulesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\DocumentationsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\GrayLabelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\GridViewWithRowHighlightUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\HelpIconUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\HtmlUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ImportFilter\FilterRowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ImportFilter\ImportFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ImportSelectionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\InfoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\InputObjectTypeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\InterfaceTables\InterfaceTablesImportErrorsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\LicenseDetailsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\LinkUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\LoginCaptionHorizontalListBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\LoginCaptionListBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\LoginCaptionListBoxItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ObjectBrowser\DataLineageObjectBrowserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ObjectBrowser\ObjectBrowserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ObjectBrowser\ObjectBrowserWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\OverriddenControls\DiagramControlWithTransparentFocusedBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\OverriddenControls\ExpandableLayoutControlGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\OverriddenControls\GridViewWithInfoText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\OverriddenControls\RibbonControlWithGroupIcons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\OverriddenControls\TileViewWithInfoText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\OverriddenControls\TreeListWithInfoText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\BasePanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\ClassificatorGridPanelUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\DatabaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\GridPanelUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\ModulesGridPanelUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\ModuleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\ParameterRowUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\ProcedureUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\TableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\PanelControls\TermUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RadioGroupWithImages\RadioGroupWithImages.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RadioGroupWithImages\RadioGroupWithImagesRepositoryItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RepositoriesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RepositoryItemAutoHeightMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RepositoryItemAutoHeightMemoEditTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RepositoryItemBaseAutoHeightMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RepositoryItemCustomTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\RichEditUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SchemaImportsAndChanges\SchemaImportsAndChangesTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SchemaImportsAndChanges\SchemaImportsAndChangesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ScrollableTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\Search\AdvancedSearchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\Search\CustomFieldSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SSLUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SummaryControls\BaseSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SummaryControls\ColumnsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SummaryControls\ModuleSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SummaryControls\ProcedureSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SummaryControls\TableSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\SummaryControls\TermSummaryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\ToolTipControllerUserControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\UpgradeBusinessGlossaryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\UpgradeDataClassificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\UpgradeDataLineageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\UpgradeDataProfilingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\UpgradeSchemaChangeTrackingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\UserPanelUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\WindowControls\AddColumnsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dataedo\App\UserControls\WindowControls\MetadataEditorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SkinRegistration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
